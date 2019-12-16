@@ -1,0 +1,234 @@
+{
+  "version": 8,
+  "name": "t-rex",
+  "metadata": {
+    "mapbox:autocomposite": false,
+    "maputnik:renderer": "mbgljs"
+  },
+  "sources": {
+    "ne": {
+      "type": "vector",
+      "url": "ne.json"
+    }
+  },
+  "glyphs": "fonts/{fontstack}/{range}.pbf",
+  "layers": [
+    {
+      "id": "background_",
+      "type": "background",
+      "paint": {
+        "background-color": "rgba(196, 241, 255, 1)"
+      }
+    },
+    {
+      "id": "land",
+      "type": "fill",
+      "source": "ne",
+      "source-layer": "land",
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "fill-color": "rgba(255, 255, 202, 1)",
+        "fill-outline-color": "rgba(152, 202, 255, 0.66)"
+      }
+    },
+    {
+      "id": "cities-non-filled",
+      "type": "circle",
+      "source": "ne",
+      "source-layer": "cities",
+      "filter": [
+        "all",
+        [
+          "==",
+          "capital",
+          "no"
+        ]
+      ],
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "circle-color": "rgba(0, 0, 0, 0.1)",
+        "circle-stroke-color": "rgba(0, 0, 0, 1)",
+        "circle-stroke-width": 0.2
+      }
+    },
+    {
+      "id": "cities-filled",
+      "type": "circle",
+      "source": "ne",
+      "source-layer": "cities",
+      "filter": [
+        "all",
+        [
+          "==",
+          "capital",
+          "yes"
+        ]
+      ],
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "circle-stroke-width": 0
+      }
+    },
+    {
+      "id": "cities",
+      "type": "symbol",
+      "source": "ne",
+      "source-layer": "cities",
+      "filter": [
+        "all",
+        [
+          "==",
+          "capital",
+          "no"
+        ]
+      ],
+      "layout": {
+        "visibility": "visible",
+        "text-field": "{name}",
+        "text-size": 10,
+        "text-font": {
+          "stops": [
+            [
+              6,
+              [
+                "Open Sans Regular",
+                "Arial Unicode MS Regular"
+              ]
+            ],
+            [
+              10,
+              [
+                "Open Sans Regular",
+                "Arial Unicode MS Regular"
+              ]
+            ]
+          ]
+        },
+        "text-offset": [
+          1.5,
+          -1
+        ]
+      },
+      "paint": {
+        "text-color": "rgba(71, 71, 71, 1)"
+      }
+    },
+    {
+      "id": "capital",
+      "type": "symbol",
+      "source": "ne",
+      "source-layer": "cities",
+      "filter": [
+        "all",
+        [
+          "==",
+          "capital",
+          "yes"
+        ]
+      ],
+      "layout": {
+        "visibility": "visible",
+        "text-field": "{name}",
+        "text-size": 12,
+        "text-justify": "right",
+        "text-offset": [
+          1.5,
+          -1
+        ],
+        "text-transform": "uppercase"
+      },
+      "paint": {
+        "text-color": "rgba(28, 28, 28, 1)",
+        "icon-color": "rgba(0, 0, 0, 1)"
+      }
+    },
+    {
+      "id": "rivers",
+      "type": "line",
+      "source": "ne",
+      "source-layer": "rivers",
+      "paint": {
+        "line-color": "rgba(161, 231, 254, 1)"
+      }
+    },
+    {
+      "id": "lakes",
+      "type": "line",
+      "source": "ne",
+      "source-layer": "lakes",
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-color": "rgba(152, 202, 255, 0.66)"
+      }
+    },
+    {
+      "id": "boundary_lines",
+      "type": "line",
+      "source": "ne",
+      "source-layer": "boundary_lines",
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-color": "rgba(115, 115, 115, 0.7)",
+        "line-opacity": {
+          "stops": [
+            [
+              0,
+              0.1
+            ],
+            [
+              10,
+              1
+            ]
+          ]
+        },
+        "line-width": 1
+      }
+    },
+    {
+      "id": "circles",
+      "type": "line",
+      "source": "ne",
+      "source-layer": "geographic_lines",
+      "filter": [
+        "all",
+        [
+          "in",
+          "name",
+          "\"tropical_circle",
+          "polar_circle\""
+        ]
+      ],
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {}
+    },
+    {
+      "id": "equator",
+      "type": "line",
+      "source": "ne",
+      "source-layer": "geographic_lines",
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-color": "rgba(128, 128, 128, 0.5)",
+        "line-dasharray": [
+          2,
+          4
+        ]
+      }
+    }
+  ],
+  "id": "7n6qomt8w"
+}

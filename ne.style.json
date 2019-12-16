@@ -1,1 +1,59 @@
-{"glyphs":"http://localhost:6767/fonts/{fontstack}/{range}.pbf","layers":[{"id":"background_","paint":{"background-color":"rgba(255, 255, 255, 1)"},"type":"background"},{"id":"cities","source":"ne","source-layer":"cities","type":"circle"},{"id":"rivers","source":"ne","source-layer":"rivers","type":"line"},{"id":"lakes","source":"ne","source-layer":"lakes","type":"line"},{"id":"boundary_lines","source":"ne","source-layer":"boundary_lines","type":"line"},{"id":"geographic_lines","source":"ne","source-layer":"geographic_lines","type":"line"},{"id":"land","source":"ne","source-layer":"land","type":"line"}],"metadata":{"mapbox:autocomposite":false,"maputnik:renderer":"mbgljs"},"name":"t-rex","sources":{"ne":{"type":"vector","url":"http://localhost:6767/ne.json"}},"version":8}
+{
+    "glyphs": "http://localhost:6767/fonts/{fontstack}/{range}.pbf",
+    "layers": [{
+            "id": "background_",
+            "paint": {
+                "background-color": "rgba(255, 255, 255, 1)"
+            },
+            "type": "background"
+        },
+        {
+            "id": "cities",
+            "source": "ne",
+            "source-layer": "cities",
+            "type": "circle"
+        },
+        {
+            "id": "rivers",
+            "source": "ne",
+            "source-layer": "rivers",
+            "type": "line"
+        },
+        {
+            "id": "lakes",
+            "source": "ne",
+            "source-layer": "lakes",
+            "type": "line"
+        },
+        {
+            "id": "boundary_lines",
+            "source": "ne",
+            "source-layer": "boundary_lines",
+            "type": "line"
+        },
+        {
+            "id": "geographic_lines",
+            "source": "ne",
+            "source-layer": "geographic_lines",
+            "type": "line"
+        },
+        {
+            "id": "land",
+            "source": "ne",
+            "source-layer": "land",
+            "type": "line"
+        }
+    ],
+    "metadata": {
+        "mapbox:autocomposite": false,
+        "maputnik:renderer": "mbgljs"
+    },
+    "name": "t-rex",
+    "sources": {
+        "ne": {
+            "type": "vector",
+            "url": "http://localhost:6767/ne.json"
+        }
+    },
+    "version": 8
+}

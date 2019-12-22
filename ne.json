@@ -18,7 +18,7 @@
     "name": "ne",
     "scheme": "xyz",
     "tiles": [
-        "http://bayoishola20.com/vector_tiles/ne/{z}/{x}/{y}.pbf"
+        "http://localhost:6767/ne/{z}/{x}/{y}.pbf"
     ],
     "vector_layers": [{
             "description": "",
